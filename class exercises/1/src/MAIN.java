@@ -1,13 +1,27 @@
 import java.util.Scanner;
-interface character
+abstract class character
 {
-void student();
-void teacher();
-void employee();
-void recieve();
+abstract void student();
+abstract void teacher();
+abstract void employee();
+abstract void recieve();
+abstract void check();
 }
-abstract class recieve extends character
+
+
+
+  abstract class student extends character {
+public void student(){System.out.println("he/she is student !! ");}
+}
+ abstract class teacher extends student
 {
+    public void teacher(){System.out.println("he/she is teacher !! ");}
+}
+ abstract class employee extends teacher
+{
+    public void employee(){System.out.println("he/she is employee !! ");}
+}
+abstract class recieve extends  employee{
     public String name[]=new String[5];
     public String namechecker;
     public int num[]=new int[5];
@@ -25,24 +39,28 @@ abstract class recieve extends character
     }
 
 }
+ class check extends recieve
+{
+    public void check()
+    {
+        for (i=0;i<5;i++)
+        {
+            if (namechecker==name[i])
+            {
+                if (num[i]==1)student();
+                else if (num[i]==2)teacher();
+                else if (num[i]==3) employee();
+            }
+        }
 
-
-abstract class student implements character
-{
-public void student(){System.out.println("he/she is student !! ");}
-}
-abstract class teacher implements character
-{
-    public void teacher(){System.out.println("he/she is teacher !! ");}
-}
-abstract class employee implements character
-{
-    public void employee(){System.out.println("he/she is employee !! ");}
+    }
 }
 public class MAIN
 {
     public static void main(String[] args)
     {
-
+character ch=new check();
+ch.recieve();
+ch.check();
     }
 }
