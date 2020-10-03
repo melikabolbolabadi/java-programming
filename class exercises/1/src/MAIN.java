@@ -21,7 +21,7 @@ public void student(){System.out.println("he/she is student !! ");}
 {
     public void employee(){System.out.println("he/she is employee !! ");}
 }
-abstract class recieve extends  employee{
+abstract class recievee extends  employee{
     public String name[]=new String[5];
     public String namechecker;
     public int num[]=new int[5];
@@ -39,27 +39,26 @@ abstract class recieve extends  employee{
     }
 
 }
- class check extends recieve
+ class checkk extends recievee
 {
     public void check()
     {
+        Scanner sca=new Scanner(System.in);
+        System.out.println("enter person name to check character in university: ");
+        namechecker=sca.next();
         for (i=0;i<5;i++)
-        {
-            if (namechecker==name[i])
-            {
-                if (num[i]==1)student();
-                else if (num[i]==2)teacher();
-                else if (num[i]==3) employee();
+            if (namechecker.equals(name[i])) {
+                if (num[i] == 1) student();
+                else if (num[i] == 2) teacher();
+                else if (num[i] == 3) employee();
             }
-        }
 
     }
 }
 public class MAIN
 {
-    public static void main(String[] args)
-    {
-character ch=new check();
+    public static void main(String[] args) throws Exception {
+character ch=new checkk();
 ch.recieve();
 ch.check();
     }
