@@ -1,4 +1,6 @@
+package homework.slide2;
 import java.util.Scanner;
+
 class lesson
 {
     private Scanner scanner;
