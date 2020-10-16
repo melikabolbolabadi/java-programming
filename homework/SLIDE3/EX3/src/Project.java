@@ -2,7 +2,8 @@ import java.util.Scanner;
 public class Project
 {
     public  String str;
-    char[] chr= {'0', '1', '2','3','4','5','6','7','8','9'};
+    public int index;
+    char[] chr= {'0','1','2','3','4','5','6','7','8','9'};
     Scanner scanner=new Scanner(System.in);
 
     public void getstr()
@@ -12,21 +13,9 @@ public class Project
     }
     public  int check()
     {
-int a=0;
-        for (int i=0;i<str.length();i++)
-
-            {
-                if (str.charAt(i)==chr[i])
-                {
-                    a=1;
-break;
-                }
-
-                else{a=2; }
-
-            }
-
-            return a;
+        for (int i=0;i<10;i++)
+             index=str.indexOf(chr[i]);
+        return index;
     }
 
     public void checkit(int a) throws CreatException
