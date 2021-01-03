@@ -9,7 +9,8 @@ public class UserService
     public static UserService us () { return userService; }
 
 
-    public void save(UserEntity userEntity) throws Exception {
+    public void save(UserEntity userEntity) throws Exception
+    {
         UserRepos userRepository = new UserRepos();
 
         userEntity.setCurrvol(userEntity.getCurrvol()+userEntity.getNewvol());
@@ -20,7 +21,8 @@ public class UserService
 
     }
 
-    public void ediit(UserEntity userEntity) throws Exception {
+    public void ediit(UserEntity userEntity) throws Exception
+    {
         UserRepos userRepository = new UserRepos();
 
         userEntity.setCurrvol(userEntity.getCurrvol()+userEntity.getNewvol());
